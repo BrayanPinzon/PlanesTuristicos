@@ -1,0 +1,137 @@
+﻿@model List<PlanesT>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Planes Turísticos</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <a href="/Home/Index" class="btn btn-secondary">Volver</a>
+    <style>
+        body {
+            background-image: url("https://www.tenjo-cundinamarca.gov.co/MiMunicipio/PublishingImages/Paginas/Sitios-de-Interes/Pe%C3%B1a%20de%20Juaica.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9); /* Ajusta la opacidad del fondo blanco */
+            z-index: -1; /* Coloca la capa de fondo detrás del contenido */
+        }
+
+        .container {
+            margin-top: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .table thead th {
+            background-color: #007BFF;
+            color: #FFFFFF;
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: 10px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+            float: left;
+            background-color: #FFFFFF; /* Fondo blanco para las tarjetas */
+            padding: 15px; /* Agrega relleno a las tarjetas */
+            border-radius: 10px; /* Bordes redondeados para las tarjetas */
+        }
+
+            .card img {
+                width: 100%;
+                height: 200px;
+                object-fit: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+                border-radius: 5px; /* Bordes redondeados para las imágenes */
+                margin-bottom: 10px; /* Agrega espacio entre la imagen y el texto */
+            }
+
+            .card h1 {
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+
+            .card .title {
+                color: grey;
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            .card p {
+                margin-bottom: 5px;
+            }
+
+            .card button {
+                background-color: #007BFF;
+                color: #FFFFFF;
+                border: none;
+                padding: 5px 10px;
+                cursor: pointer;
+                border-radius: 3px;
+            }
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+    <div class="container mt-5">
+        <h2>Planes Turísticos</h2>
+
+        @if (Model.Count > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Ubicación</th>
+                        <th>Precio</th>
+                        <th>Duración</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var plan in Model)
+                    {
+                        <tr>
+                            <td>@plan.Nombre_PlanTuristico</td>
+                            <td>@plan.Municipio</td>
+                            <td>@plan.Precio</td>
+                            <td>@plan.Duracion</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p>No se encontraron planes turísticos.</p>
+        }
+        @foreach (var plan in Model)
+        {
+            <div class="card">
+                <img src="ruta_de_la_imagen.jpg" alt="@plan.Nombre_PlanTuristico">
+                <h1>@plan.Nombre_PlanTuristico</h1>
+                <p class="title">@plan.Informacion</p>
+                <p>Precio: $@plan.Precio</p>
+                <p><button>Ver Detalles</button></p>
+                <p><button>Reservar</button></p>
+            </div>
+        }
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

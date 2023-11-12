@@ -1,0 +1,69 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IniciarSesion</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <style>
+        body {
+            background-image: url("https://www.semana.com/resizer/a2eqzGo1dMiptuUCqkFgJqx1JWU=/arc-anglerfish-arc2-prod-semana/public/GCOYSTILL5BDDGLHVUEW4O5X5Q.jpg"); /* Establece la imagen como fondo del body */
+            background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el fondo */
+            background-repeat: no-repeat; /* Evita la repetición de la imagen */
+        }
+    </style>
+    <style>
+        .centrado {
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Curlz MT', sans-serif;
+            font-size: 55px;
+            color: #FFFFFF; /* Cambia el color del texto según tus preferencias */
+        }
+    </style>
+</head>
+<body >
+    
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" >only tourism</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Inicio" asp-action="Elegir" method="post"></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Inicio" asp-action="IniciarSesion">Turista</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Inicio" asp-action="IniciarSesion2">Proveedor</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Inicio" asp-action="IniciarSesion3">Administrador</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="centrado">
+            <p>Colecciona momentos, no cosas.</p>
+            <p>Viajar es vivir</p>
+        </div>
+    </header>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
